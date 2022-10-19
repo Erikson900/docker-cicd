@@ -28,6 +28,6 @@ job('Second Job For Example') {
         scm('H/5 * * * *')
     }
     steps {
-        shell("docker build -t someName:v1")
+        shell("docker build -t someName:v1 .")
     }
 }
