@@ -1,6 +1,6 @@
 job('NodeJS example') {
     scm {
-        git('https://github.com/yanivomc/docker-cicd.git') {  node -> // is hudson.plugins.git.GitSCM
+        git('https://github.com/Erikson900/docker-cicd.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('DSL yaniv')
             node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
@@ -19,7 +19,7 @@ job('NodeJS example') {
 
 job('Second Job For Example') {
     scm {
-        git('https://github.com/yanivomc/docker-cicd.git') {  node -> // is hudson.plugins.git.GitSCM
+        git('https://github.com/Erikson900/docker-cicd.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('DSL yaniv')
             node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
@@ -27,11 +27,7 @@ job('Second Job For Example') {
     triggers {
         scm('H/5 * * * *')
     }
-    wrappers {
-        nodejs('nodejs') // this is the name of the NodeJS installation in 
-                         // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
-    }
     steps {
-        shell("docker build")
+        shell("docker build -t someName:v1")
     }
 }
