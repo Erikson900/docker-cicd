@@ -32,6 +32,6 @@ job('Second Job For Example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-        shell("npm install")
+        shell("docker build")
     }
 }
